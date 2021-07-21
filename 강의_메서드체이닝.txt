@@ -1,0 +1,7 @@
+this를 반환 -> 내부 메서드를 다시 호출 가능 -> 메서드 체이닝
+
+에시~~~~~~~~~~
+
+
+
+testObject.method1() .method2() .method3();

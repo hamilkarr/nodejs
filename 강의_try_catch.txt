@@ -1,0 +1,38 @@
+try _ catch
+    1. 소스상에서 예상되는 오류가 있을때
+    2. 예상되는 오류가 발생한 경우 후속 처리를 위해서 미리 정의해 놓는 구문
+
+    try {
+         // 오류가 예상되는 구간
+
+         // 오류가 발생하거나 또는 발생 시키면 catch로 유입
+         throw Error 객체
+    } catch (err) {
+        // 오류가 발생하면 (throw 에러 객체 ) 유입
+        // 오류에 대한 후속 처리
+    }
+
+    예)
+    try {
+            const num = 9;
+            if (num % 2 == 1) {
+                throw "짝수만 가능합니다.";}
+            tch(err) {
+            console.error(err);
+            }
+
+    Error 생성자 -> 생성해서 throw
+        .message -> new Error("오류메세지")
+        .stack -> 
+
+    
+    finally : 오류가 발생 하든 안하든 무조건 실행되는 영역
+
+        try {
+            // 오류가 발생이 예상되는 부분
+        } catch {
+            // 오류가 발생(throw)하면 유입되는 부분
+        } finally {
+            // 오류가 발생하든 안하든 무조건 실행되는 부분
+            // 로그 기록할때 자주 쓴다.
+        }

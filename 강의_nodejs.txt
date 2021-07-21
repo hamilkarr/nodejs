@@ -1,0 +1,177 @@
+Node.js
+	- 자바스크립트 코어(ECMAScript)
+	- Node.js 내장객체(서버)
+	- 비동기
+	    싱글쓰레드 모델
+	    작업 일꾼 1명 - 호출 스택
+	    동시 순차 작업 -> 성능에 문제가 발생	  
+        비동기 처리를 권장
+	
+	
+	동기식 - 순서대로 처리되는 방식
+	    작업 A, B, C
+	    A -> B -> C ->B는 A가 반드시 끝나야 시작, 처리, C는 B가 반드시 끝나고 시작
+	
+	비동기
+        - 작업은 요청한 순서대로 시작 
+	    - 결과는 끝나는대로 전달
+		- 결과의 순서는 요청한 순서와 다를 수 있다
+			   
+			   
+		- 문제1) 작업의 순서가 보장되지 않는다.
+			   
+		    예) 회원 가입 -> 로그인
+			    -> 회원가입 처리가 시간 더 걸리는 경우 
+                -> 회원가입 -> 로그인 
+                -> 로그인 -> 회원가입 -> 동작 X 
+					
+                -> 비동기 처리를 하더라도 순서 유지 필요한 경우가 많다
+					
+            1) 함수안에 인수를 함수로 실행하는 방식(콜백 방식)으로 해결
+					
+                예) 
+                function asyncFunc(workNm, worktime, callback) {
+                    setTimeout(function() {
+
+                        console.log(workNm);
+                        if (typeof callback == 'function') {
+                            callback();
+                        }
+
+                    }, worktime);
+                }
+                
+                asyncFunc("작업1", 2000);
+                asyncFunc("작업2", 1000);
+                asyncFunc("작업3", 1500);
+            
+                작업2 -> 작업3 -> 작업1 
+                
+                asyncFunc("작업1", 2000, function() {
+                    asyncFunc("작업2", 1000, function() {
+                        asyncFunc("작업3", 1500);
+                    });
+                });
+                
+                작업1(2000) -> 작업2(1000) -> 작업3(1500)
+                
+                
+                asyncFunc("작업1", 2000, function() {
+                    asyncFunc("작업2", 1500, function() {
+                        asyncFunc("작업3", 1000, function() {
+                            asyncFunc("작업4", 2000, function() {
+                                asyncFunc("작업5", 1000);
+                            });
+                        });
+                    })
+                });
+                
+                비동기 실행 -> 콜백 함수를 내부에서 실행 
+                                -> 콜백 안에 콜백 -> 콜백 
+                                -> 콜백 지옥
+                                -> 가독성 X, 유지 보수의 어려움
+									
+									
+				es6+(2015) 
+					- 콜백 지옥 -> 구조 개선 -> Promise 생성자
+					
+					
+					Promise 생성자의 인수 resolve, reject  -> 함수 인수
+					
+					const promise = new Promise(function(resolve, reject) {
+						// 로직 성공시 resolve 함수를 호출
+						// 로직 실패시 reject 함수를 호출
+					});
+												
+                    promise.then(function(data) { //resolve 가 호출되면 유입이 되는 부분
+							// data -> resolve를 호출할떄 인수로 넘겨준 값 
+					});
+					
+					promise.catch(function(data) { //reject 가 호출되면 유입이 되는 부분
+						// data -> reject 함수가 호출될때 인수로 넘겨준 값
+					});
+					
+					예)
+					function asyncFunc(workNm, worktime, callback) {
+						return new Promise(function(resolve, reject) {
+							setTimeout(function() {
+
+								if (workNm) { // 작업이 있으면 resolve 호출
+									resolve(workNm);
+								} else { // 작업 내용이 없으면 reject 호출
+									reject(workNm);
+								}
+
+								if (typeof callback == 'function') {
+									callback();
+								}
+
+							}, worktime);
+						});
+					}
+					
+					
+				asyncFunc("작업1", 2000)
+					  .then(function(workNm) {
+							console.log(workNm + " 완료!");
+						
+					   })
+					   .catch(function(workNm) {
+							console.log(workNm + " 실패!");
+					   });
+					   
+			비동기 순차 실행 
+				> then 구간에서 새로운 Promise 인스턴스를 생성해서 반환
+				> .then -> return promise 객체 
+				
+				
+				asyncFunc("작업1", 2000)
+					.then(function(workNm) {
+						console.log(workNm + " 완료!");
+						return asyncFunc("작업2", 1500);
+					})
+					.then(function(workNm) {
+						console.log(workNm + " 완료!");
+
+						return asyncFunc("작업3", 700);
+					})
+					.then(function(workNm) {
+						console.log(workNm + " 완료!");
+					})
+					.catch(function(workNm) {
+						console.log(workNm + "실패 !");
+					});
+		
+		async function (....) {
+				let result = await 비동기 함수;
+					// result -> then으로 유입된 데이터(resolve에서 인수로 넘겨준 데이터)
+					result  = await 비동기 함수;
+								...
+								...
+					result = await 비동기 함수;
+			};
+
+			예) 
+			(async function() {
+				let workNm = await asyncFunc("작업1", 2000);
+				console.log(workNm + " 완료!");
+				workNm = await asyncFunc("작업2", 1500);
+				console.log(workNm + " 완료!");
+				workNm = await asyncFunc("작업3", 1000);
+				console.log(workNm + " 완료!");
+			})();
+
+			async ~ await - reject 발생하면 error 발생
+
+			async function (....) {
+				try {
+					let result = await 비동기 함수;
+						// result -> then으로 유입된 데이터(resolve에서 인수로 넘겨준 데이터)
+						result  = await 비동기 함수;
+									...
+									...
+						result = await 비동기 함수;
+				} catch (err) {
+					// reject로 호출되면 
+				}
+			};

@@ -1,0 +1,66 @@
+복습_리스트(07-21)
+
+1교시
+
+    ex3.html
+    dropdown.css
+    dropdown.js
+
+    ex3_re.html
+    dropdown_re.js
+
+    .html() // innerHTML
+    .text() // 
+
+2교시
+
+    강의_애니메이션.txt
+
+    jquery_animation1.html (보충 필요)
+    
+    jquery_animation2.html 
+
+3교시 
+
+    강의_ajax.txt
+
+    강의_플러그인.txt
+
+    jquery_plugin.html
+        >> js 파일에서도 적용해보기
+
+4교시
+    강의_nodejs.txt
+        promise 생성자 예시 연습 (console)
+
+    nodejs_비동기.png
+
+5교시
+    강의_nodejs.txt
+
+6교시
+    강의_nodejs.txt  (보충 필요)
+
+
+    https://developer.mozilla.org/ko/docs/Learn/JavaScript/Asynchronous/Async_await
+    async ~ await 모질라 설명.
+
+    강의_Promise_exam.txt
+        예문 복습
+
+7교시
+    강의_try_catch.txt
+
+    강의_메서드체이닝.txt
+        메서드체이닝 
+    
+8교시
+    강의_객체_특징_기타.txt
+        배열객체 구조분해 다양한경우 연습해볼것.
+
+    강의_정규표현식.txt
+        nodejs 정규표현식이 무엇인지 찾아볼것.
+
+    
+
+
