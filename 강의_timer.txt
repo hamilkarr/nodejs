@@ -1,0 +1,17 @@
+global.setTimeout : 지연실행
+
+global.clearTimeout : 지연 실행 취소
+
+global.setInterval : 지연반복실행
+
+global.clearInterval : 지연반복실행 취소
+
+global.setImmediate 
+    === setTimeout(function() {},0)
+: 비동기 즉시 실행
+
+
+global.clearImmediate
+
+global. 생략가능
+ex) global.console.log()

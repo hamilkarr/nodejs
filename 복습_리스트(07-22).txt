@@ -1,0 +1,36 @@
+복습_리스트(07-22)
+
+1교시 
+
+    정규 표현식 복습중...
+    
+    강의_정규표현식.txt  이어서
+
+2교시
+
+    강의_정규표현식.txt
+        서브패턴 부분 강의 보강
+        서브패턴 birthday 예제 복습.
+        서프패턴, 패턴 추출하는법 반드시복습!!
+
+
+    강의_timer
+    강의_파일경로.txt
+    강의_모듈.txt
+    강의_querystring(url).txt
+    강의_global.txt
+
+    exam/url/querystring.js
+    exam/timer/setImmediate.js
+    exam/process.js
+    exam/path.js
+    exam/os.js
+    exam/module/test_require.js
+    exam/module/test_module.js
+    exam/module/member/index.js
+    exam/module/global/B.js
+    exam/module/global/A.js
+    exam/filePath/file_path.js
+
+    exam/url/child_process.js
+    exam/url/URL.js
