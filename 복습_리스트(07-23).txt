@@ -1,0 +1,72 @@
+복습_리스트(07-23)
+
+    node.js에대한 전면적인 재복습 필요.
+
+    1교시
+
+        강의_file.txt
+            기존방식과 promise 현재방식 비교내용.
+            promise 복습 << 꼭해라
+                callback promise async~await
+
+        폴더: exam\file\....js
+
+        exam/file/write_file.js
+        exam/file/read_file_promise.js
+        exam/file/read_file.js
+        exam\file\async_old.js 
+          주석처리 된부분부터 살려서 복습
+        exam\file\async_promise.js
+        exam\file\async_await.js
+
+    2교시
+
+        강의_buffer.txt           
+
+        exam\file\buffer.js
+            buffer 의 Buffer와, 
+            buffer2의 Buffer는 다른 것인가?? 찾아볼것.
+
+    3교시
+
+        - 17.buffer\3.createWriteStream.js
+        
+        exam\file\createReadStream.js
+            큰 파일을, 작은 데이터 단위로 쪼개서 처리한뒤 마지막에 다시 합쳐서, 출력함.
+
+        exam\file\createWriteStream.js
+
+        - 17.buffer\4.pipe.js
+
+        exam\file\pipe1.js
+        exam\file\pipe2.js
+
+        - 18.file(기타)\1.fsCreate.js
+        
+        exam\file\file_access.js
+       
+    5교시
+
+        exam\file\readdir.js 
+            보충필요. async await 연습!!
+        exam\file\rename.js
+            readme_stream.txt >>> readme_stream_new.txt
+            파일변경됨. 다른js파일 복습할때 영향있을수도.
+
+        exam\file\copy_file.js
+            readme_stream_new.txt >>> readme_stream.txt
+            다시 파일명 변경됨!!
+
+        exam\file\watch.js
+
+        -  19.events\event.js     
+        
+        강의_event.txt - 필기 보충 필요.
+
+        -  10.process.nextTick\nextTick.js
+
+
+    7교시
+
+         강의_http.txt   
+         Request_Respose.png
