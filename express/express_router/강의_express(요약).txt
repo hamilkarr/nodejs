@@ -1,0 +1,232 @@
+express - 웹 프레임워크
+		 - http - 내장 모듈 - 웹서버
+		 
+		 npm install express
+		 
+		 const app = express(); 
+		 
+		 1. 라우터 
+				app.get()
+				app.post() 
+				
+				app.put()  - 데이터 등록 
+				app.patch() - 데이터 수정
+				app.delete() - 데이터 삭제
+			
+				예)
+				app.get("라우팅 URL", 미들웨어);
+											 
+				미들웨어
+				function (req, res, next) {
+				
+				}
+				
+				1) req - Request 객체 - 사용자쪽 요청에 대한 정보, 메서드
+				2) res - Response 객체 - 서버쪽 응답에 대한 정보, 메서드
+				3) next - 함수 -> 다음 미들웨어로 이동 
+										- 라우터 내 미들웨어
+										- 라우터 간 미들웨어
+				 
+				 
+				 참고) req, res 객체는 express에서 단 요청별 1번만 생성되는 객체
+				 참고) req, res 객체는 express에서 단 요청별 1번만 생성되는 객체
+						 모든 미들웨어에 전달되는 req, res 객체는 모두 동일
+						 (인스턴스가 위치한 메모리 주소가 동일)
+						 
+		 2. 미들웨어
+			요청과 응답사이에서 기능
+			+ 여러개 등록 
+			+ 기능확장이 자유롭게 이뤄질 수 있다
+			(단순히 미들웨어만 등록)
+			
+			app.use(미들웨어) - 미들웨어 전용 라우터
+								     - 라우팅 경로 X -> 모든 메서드, 요청에 대해서 실행되는 미들웨어
+									 
+			app.use("경로", 미들웨어) - 지정된 경로에(모든 메서드) 적용되는 미들웨어
+			
+		3. 웹서버
+			app.listen(포트명, 이벤트 핸들러);
+		
+
+		4. 공통 라우터(미들웨어)
+		   - 가장상단에 있는 모든 요청 라우터
+		   
+		5. 없는 페이지 라우터(미들웨어)
+			--- 매칭되는 라우터 존재 ---
+			/ 
+			/test
+			--> 매칭되는 라우터 유입 -> 출력 -> 종료
+			
+			
+			-- 매칭되는 라우터가 존재 X ---
+			/test2
+			
+			--> 가장 하단에 있는 모든 요청 처리 라우터
+		
+			가장 하단에 있는 모든 요청 라우터가 없는 페이지 처리 위치 
+		
+		
+		7. 오류 처리 라우터
+			app.use((err, req, res, next) => {
+			
+			});
+		
+			
+			미들웨어의 인수가 4개인 경우 -> 오류 처리 담당
+			err -> 에러 객체 - 에러가 발생하여 throw 에러 객체
+			    -> next("에러객체")
+				
+			- 반드시 4개의 인수가 유지가 되어야 오류처리 담당
+			
+		
+		
+		8. express 객체안에 값 설정, 값 조회
+			app.set("속성명", "속성값");
+			app.get("속성명");
+		
+		9. process.env 
+			-> 환경변수를 저장하는 속성객체 
+			-> 사이트 설정 
+			
+		10. .env  -> 환경설정파일
+					-> dotenv 패키지 설치 -> 설정을 완료 
+					-> .env파일의 설정 -> process.env 속성에 추가 
+					
+					npm i dotenv
+					const dotenv = require('dotenv');
+					dotenv.config();
+					-> .env -> process.env 하위 속성으로 자동 추가
+					
+		11. morgan 패키지 - 웹 요청에대한 추가 정보
+			->dev, combined, common, tiny, short
+				
+				npm i morgan
+				
+			dev 
+				[HTTP 메서드] [주소 - URL] [HTTP 상태코드] [응답속도] - [응답바이트] 
+				
+		12. 라우터 URL에 영향을 받지 않는 정적인 경로를 특정 디렉토리에 설정 
+			express.static("경로") 
+			
+			-> 이미지, css, js, 업로드된 파일 등등...
+
+		13. 미들웨어 추가
+			function (req, res, next) => { 
+
+			}
+
+			반드시 
+				req, res, next
+
+		14. 데이터	
+			GET - URL 에 전송되는 데이터
+				- 속성 = 값&속성=값...
+				- 쿼리스트링
+			
+			POST
+				- method - POST인 경우
+				>> 사용자가 요청(REQUEST)해서 서버로 전송한 데이터
+
+			express - 미들웨어 - req - Request 
+			req - 사용자가 전송한 데이터를 확인
+				- req.query : GET으로 전송한 데이터 객체
+				- req.params : GET으로 전송한 데이터
+							   URL 인수(parameter) 형태로 전달된 형태
+							   /url/: 인수
+
+				- req.body : POST로 전송한 데이터 객체
+						- 추가 미들웨어를 등록해야 접근 가능
+						(body-parser)
+						- express.json()
+						- express.urlencoded({ extended : false })
+						
+						extended: 쿼리스트링 확장 모듈을 쓸지 말지
+								- false : 외장모듈 안씀. 내장모듈 querystring을 사용해서 객체로 변환
+								- true : 외부모듈 qs 사용하여 변환
+						
+						// memId=testid&memPw=1234
+				
+				(content-type: x-form-www-urlencoded)
+			
+		15. 같은 URL 라우터로 묶는 기능
+			.route("공통 URL")
+				.각 메서드별 라우터
+				
+			예)
+			app.route("/")
+				.get((req, res) => {
+					return res.sendFile(path.join(__dirname, 	'index.html'));
+				})
+				.post((req, res) => {
+					console.log("req.body", req.body);
+					return res.send("");
+				});
+
+		16. 템플릿
+			: HTML 페이지 출력 동적으로 조작할 수 있는 편의 기능 제공
+			-> nunjucks -> mozila에서 만든 외부 모듈(패키지)
+			-> npm i nunjucks
+
+			express - view engine - html 명시 -> nunjucks
+
+			app.set('view engine','html'); 
+			
+			nunjucks.configure(템플릿 파일 폴더 경로, {
+				express : // express 객체, // 명시한 객체 기준으로 추가 설정, 추가 메서드등이 자동으로 추가된다.
+				watch : true - 템플릿에 변화 -> 자동 갱신
+						false - 템플릿변화 x -> 자동 갱신 안함
+			});
+
+			예)
+			app.set('view engine','html'); 
+			nunjucks.configure(path.join(__dirname,'views'), {
+				express : app,
+				watch : true,
+			});
+
+			res.render 메서드가 nunjucks와 호환
+			res.render("템플릿 경로", 객체 - 템플릿에 넘겨줄 데이터);
+				-> 기준이 configure에서 설정한 템플릿 경로
+
+			nunjucks 사용법
+				1) 템플릿 레이아웃
+					공통적인 레이아웃 정의
+					변경될 부분 정의
+					{% block 블록명 %}
+					// 변경이 될 수 있는 영역
+					{% endblock %}
+
+					템플릿 사용
+					{% extends '템플릿 파일 경로' %}
+
+				2) 반복문
+					{% for .. in .. % }
+						// loop.index -> 현재 반복하는 순서
+							(인덱스- 1부터 시작)
+					{% endfor %}
+
+				3) 조건문
+					{% if 조건식 %}
+						// 조건식이 참일때 출력되는 부분
+					{% elif 조건식 %}
+					
+					{% else %}
+						// 조건식이 거짓일때 출력되는 부분	
+					{% endif %}
+
+					간단한 조건
+					{{'참일때 출력되는 문구' if 조건식 }}
+
+					{{ '참일때' if 조건식 else '거짓일때' }}
+				
+				4) 출력
+					{{ 속성명 }} -> 텍스트로만 출력
+
+					{{ 속성명 | safe }} -> HTML 허용
+
+				5) 템플릿 안에서 변수 설정
+					{% set 변수명 = 값 %}
+						-> 원시 값, 배열 객체
+
+
+			

@@ -1,0 +1,26 @@
+1. 필요한 모듈 require
+    : express, dotenv, morgan, pat h
+
+2. listen - PORT는 설정할 수 있도록 (.env)
+
+3. 없는 페이지 + 오류 처리
+
+4. 필요한 미들웨어 등록
+    - morgan
+
+    - express.static
+    - body-parser
+        - express.json()
+        - express.urlencoded({extended : false})
+
+5. 외부 라우터
+  
+    
+    /board/list/게시판 -> 게시판명은 변경이 되도록(url 인수)
+    /board/view/게시글 번호 -> 게시글 번호는 변경이 되도록
+
+    /board/write -> GET 라우터 : 작성 양식
+                 -> POST 라우터 : 글작성
+                 -> PATCH 라우터 : 글수정
+                 -> DELETE 라우터 : 글 삭제
+    
