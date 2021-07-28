@@ -1,8 +1,8 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
-const path = require('path');
 const nunjucks = require('nunjucks');
+const path = require('path');
 // 외부 라우터
 const boardRouter = require("./routes/board");
 

@@ -41,5 +41,10 @@ const data = { list1,list2 };
     const { status : {count} } = person;
 
     2. 배열객체에서 구조분해
-        const []
-    
+	   const [ .... ] -> 순서로 분해
+	   
+	   const nums = [0,1,2,3,4,5];
+	   const [ a, b, c, d, e ] = nums;
+	   
+	   const nums = [0,1,2,3,4,5];
+	   const [a,,,,,e] = nums;

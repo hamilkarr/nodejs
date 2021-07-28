@@ -5,3 +5,18 @@
     코딩 문제 찾아보기. 프로그래머스??
     생성자.
 
+라우터
+
+템플릿
+
+body-parser
+
+path.join(__dirname,'views')
+
+app.set('view engine','html'); // view engine의 속성값을 html로 정한다는 뜻??
+
+res.render 메서드가 nunjucks와 호환
+			res.render("템플릿 경로", 객체 - 템플릿에 넘겨줄 데이터);
+				-> 기준이 configure에서 설정한 템플릿 경로
+
+미드웨어 라우팅 차이??는 사용자의 주소 요청여부??

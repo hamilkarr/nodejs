@@ -1,5 +1,5 @@
 1. 필요한 모듈 require
-    : express, dotenv, morgan, pat h
+    : express, dotenv, morgan, path
 
 2. listen - PORT는 설정할 수 있도록 (.env)
 
@@ -13,7 +13,22 @@
         - express.json()
         - express.urlencoded({extended : false})
 
-5. 외부 라우터
+5. 필요한 설정
+    dotenv.config()
+    nunjucks 설정
+        - app.set("view engine", "html");
+        - nunjucks.configure(".. 템플릿 파일 경로',{
+            express : 생성된 express 객체,
+            watch : true,            
+        });
+
+6. 로거를 커스텀해서 추가
+    winston
+        - log level -> info 이상(info, warn, error)
+        - 날짜, 시간 -> 파일명은 날짜.log, 메세지 앞에 시간을 추가
+        - logs 폴더에 
+
+6. 외부 라우터
   
     
     /board/list/게시판 -> 게시판명은 변경이 되도록(url 인수)

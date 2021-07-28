@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel='stlyesheet' type='text/css' href='/css/style.css'>
+    <script src="/js/common.js"></script>
+</head>
+<body>
+    
+        {% block header %}
+    <header>
+        {% include 'outline/header/main.html' %}
+    </header>
+        {% endblock %}   
+    
+   
+        {% block nav %}
+        <nav>
+        {% include 'outline/menu/main.html' %}
+        </nav>
+        {% endblock %}  
+   
+    <main>
+        {% block content %}
+
+        {% endblock %}   
+    </main>
+    
+        {% block footer %}
+        <footer>
+        {% include 'outline/footer/main.html' %}
+        </footer>
+        {% endblock %}   
+    
+</body>
+</html>
