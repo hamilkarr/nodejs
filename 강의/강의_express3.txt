@@ -1,0 +1,128 @@
+1. nunjucks
+    
+    1) 레이아웃 템플릿 : 공통 부분을 정의, 변경될 부분도 정의
+        
+        변경될 부분 정의
+       
+        {% block 블록명칭 %}
+            변경이 될 수 있는 부분을 정의
+        {% endblock %}
+
+        템플릿(공통 부분) 불러오기 
+        
+        {% extends '레이아웃 템플릿 경로'%}
+
+    2) 출력
+        {{ 변수 }} - 텍스트 형태로만 출력 (<html> 태그 적용 안됨.)
+
+        {{ 변수 | safe }} - HTML 출력 가능
+
+    3) 변수
+        {% set 변수명 = '값' %}
+
+    4) 반복문
+        {% for item in items %}
+            // loop.index -> 1부터 시작하는 반복되는 요소의 인덱스
+        {% endfor %}
+
+    5) 조건문
+        {% if 조건식 %}
+
+        {% elif 조건식 %}
+
+        {% else %}
+
+        {% endif %}
+
+    6) 간단한 조건식 출력
+        {{% '참일때' if조건식 %}}
+        {{% '참일때' if 조건식 else '거짓일때' % }}
+
+    7) 템플릿 파일 추가
+        {% inclued '템플릿 파일 경로' %}
+
+    8) 전역 템플릿 변수
+        
+        일반적인 방식 : render시 데이터를 넘기는 방식
+         - res.render("템플릿 경로", 데이터)
+
+        res.locals 의 하위 속성으로 지정 -> 템플릿 전역 변수 : 따로 render에 넘겨줄 필요가 없을 경우.
+            예) 로그인 할때 로그인정보.
+
+2. 개발환경 (development)
+    
+   - nodemon
+
+   서비스환경 (production)
+    
+    - cross-env ( 개발모드 서비스모드 전환?? )
+        - dotenv는 dotenv.config()를 호출 했을떄 .env -> process.env에 추가
+        -호출하지 않으면? ... 환경 변수가 유지되지 않는다.
+
+        - 서버 시작시 환경 변수를 추가 -> 전역에 유지
+        - 개발중, 서비스 중인지 구분하는 환경 변수 -> 전역 유지 필요
+            process.env.NODE_ENV
+                - development : 개발 중
+                - production : 서비스 중
+
+        - 실제 서비스 환경에서만 적용
+            (nodemon에서는 적용 안됨)
+            (pm2 환경에서만 적용 됨)
+    
+    - pm2
+        - 백그라운드에서 실행
+        - node.js에는 쓰레드가 1개 - 쓰레드가 죽게 되면 -> 서버 다운
+        - 쓰레드가 종료 -> pm2가 감지해서 다시 재실행 해줌.   
+		
+		npm i pm2 // npm i -g pm2 -> 전역 설치 pm2
+		npx -> node_modules에 설치된 명령어를 실행
+		npx pm2
+					- start 앱 파명 -> 시작 
+					- stop  앱아이디|앱이름|all
+					- restart 앱아이디|앱이름|all
+					- reload 앱아이디|앱이름|all
+					- delete 앱아이디|앱이름|all
+					- monit -> 앱이 동작을 모니터링
+
+    - winston
+        : 로그를 기록하는 모듈
+            npm i winston
+        - log/오늘날짜.log -> 파일명
+        - 로그데이터 -> [시간]
+
+
+기본셋팅	
+1. package.json - npm init
+	"scripts": {
+		"dev": "nodemon app", // 개발중일때 실행 하는 명령어
+		"start" : "cross-env NODE_ENV=production pm2 start app.js" // 서비스 중일때 실행하는 명령어
+	},
+
+2. 모듈 
+   npm i express morgan dotenv nunjucks pm2 cross-env winston
+   npm i -D nodemon
+
+3. app.js
+	1) 필요한 모듈 require
+	2) listen 
+	3) 없는 페이지 + 오류 처리 
+	    (템플릿 error.html에 출력 + 로그 기록 - 개발중 - 콘솔, 서비스 - 파일 로그)
+	4) 필요한 미들웨어 
+		morgan 
+		body-parser (express.json(), express.urlencoded({ extended : false }))
+		express.static -> 정적 경로 
+
+	5) 필요한 설정 
+		dotenv.config()
+		nunjucks 설정 
+			 - app.set('view engine', 'html');
+			 - nunjucks.configure('.. 템플릿 파일 경로 ', {
+				   express : 생성된 express 객체,
+				   watch : true, 
+			    });
+                
+	6) 로거를 커스텀 추가 
+		(winston)
+		- log level -> info 이상(info, warn, error)
+		- 날짜, 시간 -> 파일명은 날짜.log, 메세지 앞에 시간을 추가
+		- logs 폴더에 기록, 없으면 생성(fs.access -> ENOENT -> fs.mkdir)
