@@ -8,7 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="/css/{{ css }}.css">
 		{% endfor %}
 		{% endif %}
-		{% block css %}
+		{% block style %}
 		{% endblock %}
 		<script src="/js/common.js"></script>
 		{% if addScript.length > 0 %}
@@ -26,13 +26,13 @@
 		{% include 'outline/header/main.html' %}
 		</header>
 		{% endblock %}
-		
+
 		{% block nav %}
 		<nav>
 		{% include 'outline/menu/main.html' %}
 		</nav>
 		{% endblock %}
-		
+
 		<main>
 		{% block content %}
 		{% endblock %}
@@ -43,6 +43,5 @@
 		{% include 'outline/footer/main.html' %}
 		</footer>
 		{% endblock %}
-		
 	</body>
-</html>
+</html> 

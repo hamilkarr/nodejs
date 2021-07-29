@@ -4,7 +4,7 @@
               - 기존 기능을 promise 방식으로 변환
 
 fs.readFile - 파일읽기
-            - 기존: 함수 콜백 방식
+            - 기존 : 함수 콜백 방식
             - 현재 : Promise 방식
 
     fs.readFileSync : 동기식
@@ -26,7 +26,7 @@ fs.access : 파일을 조회, 쓰기, 읽기 권한이 있는지 체크
             - constants.W_OK : 파일 쓰기 권한이 있는지 체크
             - constants.R_OK : 파일 읽기 권한이 있는지 체크
 
-            err.cond --  ENOENT --> 파일이 존재 X, 디렉토리가 존재 X 
+            err.code --  ENOENT --> 파일이 존재 X, 디렉토리가 존재 X 
                 >> 디렉토리가 없으면 디렉토리 생성
                 >> 파일이 없으면 생성
 

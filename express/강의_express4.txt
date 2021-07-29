@@ -1,0 +1,41 @@
+Node.js 웹 프레임워크
+
+1. 라우터
+    app.get
+    app.post
+        app.patch
+        app.put
+        app.delete
+
+    app.get("URL", 미들웨어);
+
+2. 미들웨어 
+    function (req,res,next) {
+
+    }
+    
+    1) req : Request 객체
+    2) res : Response 객체
+    3) next : 함수 >> 다음 미들웨어로 이동 함수
+            - 라우터간 미들웨어 이동
+            - 동일 라우터간 미들웨어 이동
+    4) 미들웨어간 확장, 기능추가가 쉽다.
+
+        4.1) app.use
+            - 모든 method(GET,POST, DELETE, PATCH, PUT ....) 기능을 작동
+            - URL 입력을 하지 않을 경우?? >> 모든 Request URL에 매칭
+
+            - 가장 상단에 배치하면? >> 공통 라우터
+            - 가장 하단에 배치하면?? >> 없는 페이지 처리 라우터
+
+            - 독립적으로 미들웨어를 등록하는 용도로 주로 사용한다.
+
+    5) 미들웨어 만들기
+        "function (req,res,next) {}" 반드시 정의.
+
+        a. 미들웨어 1개
+        b. 미들웨어 여러개
+        c. 인수가 있는 미들웨어
+            morgan('dev')
+            morgan('combined')
+

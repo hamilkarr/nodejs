@@ -1,0 +1,32 @@
+복습_리스트(07-29)
+
+    @ fs 모듈(File System)
+        - https://opentutorials.org/module/938/7373
+    @ Promise 연산자
+
+    
+2교시
+    \express_exam3\app.js 시작
+    express 라우터 미들웨어 복습
+
+3교시
+    
+    middle3 인수 변경에 따른 미들웨어
+    강의_express5.txt
+
+4교시
+    \express_exam4 시작
+    @ logger.js 보충
+    @ err.stack
+    
+5교시 
+    @ for in 
+    @ const bootStrap = require('./boot/index');
+    @ res.render
+
+8교시 
+자바스크립트\객체.txt
+
+    @ array
+    @ string
+    @ prototype
