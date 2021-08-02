@@ -1,0 +1,36 @@
+1교시
+    쿠키,세션 복습
+
+    쿠키 >> 쿠키파서모듈 설치 >> 쿠키.js
+
+    express\express_exam6\lib\common.js 내용보강
+
+2교시
+    강의_express6 찾고 보강.
+    express\express_exam6\middleware\member.js 보강
+
+3교시 
+    암호화 해쉬
+
+
+4교시 
+express\express_exam6\routes\member.js 보강
+회원가입 안되는 이유 해결.
+
+5교시 
+express\exam7 시작.
+
+웹 모바일 어플리케이션 제작 과제
+
+    회원가입 : 파일데이터 (json) - JSON.stringify
+    로그인: JSON.parse
+    로그아웃: req.session.destroy();
+
+
+8교시
+    @ 넌적스 템플릿 재정의
+        html의 정적인 단점을 개선
+        - 반복문,조건문 변수등을 사용할수 있음
+        - 동적인 페이지?? 작성 가능 
+    @ exam7 lib/common.js 문법
+    express\exam7\middleware\member.js 보강

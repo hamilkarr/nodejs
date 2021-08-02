@@ -1,0 +1,26 @@
+1교시
+    express_exam6\
+
+     6.14.13 -> 7.20.3      │
+   │   Changelog: https://github.com/npm/cli/releases/tag/v7.20.3   │       
+   │               Run npm install -g npm to update!
+
+   @ 로거파일에서 error.html파일과 어떻게 연결되어 있는가?
+   @ app.use(indexRouter); 생략된부분 다시 설명필요.
+
+2교시
+
+    4000포트 메인페이지 연동안됨. >> 해결. 라우터 위치문제였음 ( 코딩 명령 순서가 중요.)
+    
+    @ nunjucks 강의\강의_express(요약).txt 에서 복습
+
+
+3교시
+    multer : 파일 업로드 외부 모듈
+
+4교시
+    multer 이어서...
+    express\express_exam6\views\main\index.html
+
+7교시
+    @ const mode = req.params.mode;
