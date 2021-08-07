@@ -15,13 +15,13 @@ const member = {
 	join : async function(data) {
 		try {
 			delete data.memPwRe;
-
+			
 			// 비밀번호 해시 처리 
 			data.memPw = await bcrypt.hash(data.memPw, 10);
-
+			
 			const filePath = path.join(__dirname, "../data/member", data.memId + ".json");
 			await fs.writeFile(filePath, JSON.stringify(data));
-
+			
 			return true;
 		} catch (err) { // 회원 가입 실패 
 			return false;
@@ -45,11 +45,11 @@ const member = {
 			if (!info) { // 회원정보가 없는 경우 
 				throw new Error('회원이 존재하지 않습니다.');
 			}
-
+			
 			const match = await bcrypt.compare(memPw, info.memPw);
 			if (match) { // 비밀번호 일치 
 				req.session.memId = memId;
-
+				
 				return true;
 			} else {
 				throw new Error('비밀번호가 불일치 합니다.');
@@ -64,7 +64,7 @@ const member = {
 	*/
 	get : async function(memId) {
 		try {
-
+			
 			const filePath = path.join(__dirname, "../data/member/" + memId + ".json");
 			let data = await fs.readFile(filePath); // buffer -> 문자열(toString()) -> 객체(JSON.parse)
 			data = JSON.parse(data.toString());
@@ -75,4 +75,4 @@ const member = {
 	}
 };
 
-module.exports = member; 
+module.exports = member;

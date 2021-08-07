@@ -1,7 +1,8 @@
+<!-- express\book_exam7\views\main\index.html -->
+
 {% extends 'layout.html' %}
 
 {% block content %}
-메인 페이지
 
 {% if isLogin %}
 {{ member.memNm }}님 로그인... 
@@ -11,4 +12,5 @@
 <a href='/member/login'>로그인</a>
 {% endif %}
 
-{% endblock %} 
+{% endblock %}
+

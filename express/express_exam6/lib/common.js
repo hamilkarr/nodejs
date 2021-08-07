@@ -17,7 +17,7 @@ const commonLib = {
 		if (isBack) { // 뒤로가 가기가 true인 경우
 			script += "history.back();";
 		}
-		script += "</script>";
+		script += "</script>";		
 		return res.send(script);
 	},
 	/** 뒤로 돌아가기 history.back() */

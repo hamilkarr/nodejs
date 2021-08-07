@@ -1,0 +1,18 @@
+ape.ues : 미들웨어 -요청과 응답사이에 실행되는 코드
+
+라우터에서 세부라우팅해주기 ( 라우터 합쳐서 코드 줄이기)
+exam7 에서 실제 사용된 코드 확인.
+
+router.route ???
+
+09:40초까지 학습. 다시 앞부분 으로 돌아가서 복습중..
+
+app.get  // router.get 의미 확인??
+3part router 폴더와 파일을 만들어 API들 관리하기
+
+app.get('/', function(요청, 응답) { 
+  응답.sendFile(__dirname +'/index.html')
+});
+
+폼에 입력한 데이터를 서버에 전송하는 법 (POST요청)
+<form action="/add" method="POST"> </form>

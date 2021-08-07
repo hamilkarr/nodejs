@@ -6,7 +6,13 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const path = require('path');
 const logger = require('./lib/logger');
-const bootStrap = require('./boot'); //boot/index.js
+const bootStrap = require('./boot');
+
+/** 라우터 */
+const indexRouter = require('./routes'); // 메인 페이지 라우터 
+const memberRouter = require('./routes/member'); // 회원 관련 라우터 
+const scheduleRouter = require('./routes/schedule'); // 스케줄 관련 라우터
+const schedule2Router = require('./routes/schedule2'); // 스케줄 연습 라우터 
 
 const app = express();
 
@@ -33,19 +39,14 @@ app.use(bootStrap); // 사이트 초기화 미들웨어
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
-// 내장 body-parser
 app.use(express.urlencoded({ extended : false }));
 
 
-/** 라우터 등록 
-app.use("url",requier('./route/경로'))
-위줄에 라우터 입력 필요 없음!
-*/
-
-app.use("/", require('./routes'));
-app.use("/member", require('./routes/member'));
-app.use("/schedule", require('./routes/schedule'));
-app.use("/schedule2", require('./routes/schedule2'));
+/** 라우터 등록 */
+app.use(indexRouter);
+app.use("/member", memberRouter);
+app.use("/schedule", scheduleRouter);
+app.use("/schedule2", schedule2Router);
 
 /** 없는 페이지 라우터 */
 app.use((req, res, next) => {
@@ -56,6 +57,7 @@ app.use((req, res, next) => {
 
 /** 오류 처리 라우터 */
 app.use((err, req, res, next) => { // 인수는 반드시 4개
+	
 	/** 
 		err.message 
 		err.status

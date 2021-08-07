@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const path = require('path');
 const logger = require('./lib/logger');
-const bootStrap = require('./boot'); //boot/index.js
+const bootStrap = require('./boot');
 
 const app = express();
 
@@ -33,19 +33,14 @@ app.use(bootStrap); // 사이트 초기화 미들웨어
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
-// 내장 body-parser
 app.use(express.urlencoded({ extended : false }));
 
 
-/** 라우터 등록 
-app.use("url",requier('./route/경로'))
-위줄에 라우터 입력 필요 없음!
-*/
-
+/** 라우터 등록 */
 app.use("/", require('./routes'));
 app.use("/member", require('./routes/member'));
 app.use("/schedule", require('./routes/schedule'));
-app.use("/schedule2", require('./routes/schedule2'));
+app.use("/schedule2",  require('./routes/schedule2'));
 
 /** 없는 페이지 라우터 */
 app.use((req, res, next) => {
@@ -56,6 +51,7 @@ app.use((req, res, next) => {
 
 /** 오류 처리 라우터 */
 app.use((err, req, res, next) => { // 인수는 반드시 4개
+	
 	/** 
 		err.message 
 		err.status
