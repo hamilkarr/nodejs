@@ -1,0 +1,17 @@
+middleware\validator.js
+
+const requiredData = {
+      memId : " 아이디를 입력하세요",
+      memPw : " 비밀번호를 입력하세요",
+      memPwRe : " 비밀번호를 확인해 주세요",
+      memNm : "회원명을 입력해주세요",
+    }
+
+    for (key in requiredData) {
+      if (!req.body[key]) {
+        // requiredData 누락 -> 에러메세지 출력
+        throw new Error(requiredData[key]);
+      }
+    }
+
+    복습
