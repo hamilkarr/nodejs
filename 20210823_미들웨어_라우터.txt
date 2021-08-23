@@ -1,0 +1,9 @@
+Node.js + Express : 웹프레임워크
+
+익스프레스
+  1) 미들웨어
+  2) 라우터
+
+웹
+
+Request --------------- Response
