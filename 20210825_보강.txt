@@ -1,0 +1,13 @@
+1. 설치모듈
+express, sequelize, sequelize-cli, mysql2(드라이버, sql과 sequelize를 연결)
+
+2. sequelize 초기 설정
+  npx sequelize init
+
+3. 설정
+  config\config.json
+
+4. app.js
+  models/index.js -> 데이터베이스 연결, 사용을 위한 Sequelize 인스턴스를 생성
+                  -> .sync() -> DB 연결
+                  -> .query() -> SQL 실행
