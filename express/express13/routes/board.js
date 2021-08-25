@@ -7,12 +7,12 @@ const router = express.Router();
 // /board/write - GET - 양식, POST - 등록
 // /board/view/:num - GET
 /**
-GET - URL의 쿼리스트링 형태(키=값&키=값) - req.query
-	 - /view/:num (URL 변수) - req.params 
-	   
-POST - req.body -> body parser가 미들웨어에 추가된 이후
+    GET - URL의 쿼리스트링 형태(키=값&키=값) - req.query
+      - /view/:num (URL 변수) - req.params 
+        
+    POST - req.body -> body parser가 미들웨어에 추가된 이후
 
-*/
+    */
 
 router
   .route("/write")
@@ -42,20 +42,23 @@ router
       },
       type: QueryTypes.INSERT,
     });
+    // console.log(result);
     const num = result[0]; // 게시글 번호(Primary Key + Auto Increment)
+    // console.log(num);
 
     return res.redirect("/board/view/" + num);
   });
 
 router.get("/view/:num", async (req, res) => {
   const num = req.params.num;
+  // console.log(num);
   const sql = "SELECT * FROM board WHERE num = ?";
   const result = await sequelize.query(sql, {
     replacements: [num],
     type: QueryTypes.SELECT,
   });
   const data = result[0];
-
+  // console.log(data);
   return res.render("view", data);
 });
 

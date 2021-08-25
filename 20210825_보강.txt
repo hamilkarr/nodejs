@@ -5,7 +5,7 @@ express, sequelize, sequelize-cli, mysql2(드라이버, sql과 sequelize를 연�
   npx sequelize init
 
 3. 설정
-  config\config.json
+  config\config.json : 데이터베이스 계정
 
 4. app.js
   models/index.js -> 데이터베이스 연결, 사용을 위한 Sequelize 인스턴스를 생성
