@@ -33,12 +33,12 @@ router
 
     //const sql = "INSERT INTO board (boardTitle, boardContents) VALUE (?, ?)";
     const sql =
-      "INSERT INTO board (boardTitle, boardContents) VALUE (:boardTitle, :boardContents)";
+      "INSERT INTO board (boardTitle, boardContents) VALUE (:title, :contents)";
     const result = await sequelize.query(sql, {
       //replacements : [req.body.boardTitle, req.body.boardContents],
       replacements: {
-        boardTitle: req.body.boardTitle,
-        boardContents: req.body.boardContents,
+        title: req.body.boardTitle,
+        contents: req.body.boardContents,
       },
       type: QueryTypes.INSERT,
     });
@@ -58,7 +58,7 @@ router.get("/view/:num", async (req, res) => {
     type: QueryTypes.SELECT,
   });
   const data = result[0];
-  // console.log(data);
+  console.log(data);
   return res.render("view", data);
 });
 
