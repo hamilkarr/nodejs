@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
   <link rel="stylesheet" href="/css/style.css">
   {% if addCss.length > 0 %}
   {% for css in addCss %}
@@ -11,6 +12,7 @@
   {% endif %}
   {% block style %}
   {% endblock %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="/js/common.js"></script>
   {% if addScript.length > 0 %}
   {% for script in addScript %}
@@ -19,9 +21,29 @@
   {% endif %}
   {% block script %}
   {% endblock %}
-  <title>Board</title>
+  <title>{{ pageTitle }}</title>
 </head>
 <body>
-  
+  {% block header %}
+  <header>
+    {% include "../header/headermain.html" %}
+  </header>
+  {% endblock %}
+
+  {% block mainMenu %}
+    {% include "../menus/menumain.html" %}
+  {% endblock %}
+
+  <main>
+  {% block content %}    
+  {% endblock %}
+  </main>
+
+  {% block footer %}
+  <footer>
+    {% include "../footer/footermain.html" %}
+  </footer>
+  {% endblock %}
+  <iframe name="ifrmHidden" src="" frameborder="0" width="100%" height="500"></iframe>
 </body>
 </html>

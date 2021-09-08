@@ -9,13 +9,24 @@ const nunjucks = require("nunjucks");
 const path = require("path");
 const logger = require("./lib/logger");
 const pm2 = require("pm2");
-// const  = require("");
-// const  = require("");
+// const bootStrap = require("./boot");
+const { sequelize } = require("./models");
 
 /* 라우터 */
 //const mainRouter = require("./routes/main/index");
+// const memberRouter = require("./routes/member/memberindex");
 
 const app = express();
+
+sequelize
+  .sync({ force: false })
+  .then(() => {
+    logger("데이터 베이스 연결 성공");
+  })
+  .catch((err) => {
+    logger(err.message, "error");
+    logger(err.stack, "error");
+  });
 
 app.set("PORT", process.env.PORT || 3000);
 app.set("view engine", "html");
@@ -41,6 +52,8 @@ app.use(
     name: "yhsessionid",
   })
 );
+app.use("/", require("./boot")); // 사이트 초기화
+app.use("/member", require("./routes/member/memberindex"));
 
 // 라우터 등록
 app.use("/", require("./routes/main/index"));
