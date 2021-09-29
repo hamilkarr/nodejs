@@ -40,6 +40,19 @@ const member = {
       return false; // 회원가입 실패
     }
   },
+  // 로그인 처리
+  // @param memID 아이디
+  // @param memPw 비밀번호
+  // @return Boolean - true 로그인 성공
+  login(memID, memPw) {
+    /*
+     * 1. memID - 회원 정보를 DB에서 조회
+     * 2. 회원정보가 있으면 memPw 해시코드 사용자가 입력한 memPw와 비교
+     * bcrypt.compare
+     * 3. 비밀번호가 일치 -> 로그인 처리(세션으로 처리)-> return true
+     * 4. 비밀번호가 불일치 -> return false
+     */
+  },
 };
 
 module.exports = member;
