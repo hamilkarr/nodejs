@@ -1,9 +1,9 @@
-/* 회원 기능 관련 미들웨어 */
 const { alert } = require("../lib/common");
 const {
   sequelize,
   Sequelize: { QueryTypes },
 } = require("../models/index");
+/* 회원 기능 관련 미들웨어 */
 
 const member = {
   /* 회원 가입 데이터 검증 미들웨어 */
@@ -94,6 +94,22 @@ const member = {
       }
     } catch (err) {
       return alert(err.message, res);
+    }
+    next();
+  },
+  /* 비회원 전용 접속 권한 체크 */
+  guestOnly(req, res, next) {
+    if (req.isLogin) {
+      //로그인 상태이면 접속 불가 처리
+      return alert("이미 접속중 입니다.", res, -1);
+    }
+    next();
+  },
+  /* 관리자 전용 접속 권한 체크 */
+  adminOnly(req, res, next) {
+    if (!req.isLogin || !req.member.isAdmin) {
+      // 비회원이거나 관리자가 아닌 회원인 경우
+      return alert("접속 권한이 없습니다.", -1);
     }
     next();
   },

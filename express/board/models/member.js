@@ -43,8 +43,9 @@ const member = {
   // 로그인 처리
   // @param memID 아이디
   // @param memPw 비밀번호
+  // @param req -request 인스턴스  -> 세션을 사용하기 위한 용도 req.session 속성
   // @return Boolean - true 로그인 성공
-  login(memID, memPw) {
+  async login(memID, memPw, req) {
     /*
      * 1. memID - 회원 정보를 DB에서 조회
      * 2. 회원정보가 있으면 memPw 해시코드 사용자가 입력한 memPw와 비교
@@ -52,6 +53,41 @@ const member = {
      * 3. 비밀번호가 일치 -> 로그인 처리(세션으로 처리)-> return true
      * 4. 비밀번호가 불일치 -> return false
      */
+    const info = await this.get(memID);
+    if (!info) {
+      // 회원 정보가 없는 경우
+      return false;
+    }
+    const match = await bcrypt.compare(memPw, info.memPw);
+    if (match) {
+      // 비밀번호 일치 -> 3. 로그인 처리
+      req.session.memID = memID;
+      return true;
+    }
+    return false;
+  },
+  /* 회원정보 조회
+   *@param memID
+   *@return JSON|Boolean
+   *
+   */
+  async get(memID) {
+    try {
+      const sql = "SELECT * FROM member WHERE memID = ?";
+      const rows = await sequelize.query(sql, {
+        replacements: [memID],
+        type: QueryTypes.SELECT,
+      });
+      if (rows.length == 0) {
+        return false;
+      }
+      return rows;
+      //  console.log(rows);
+    } catch (err) {
+      logger(err.message, "error");
+      logger(err.stack, "error");
+      return false;
+    }
   },
 };
 

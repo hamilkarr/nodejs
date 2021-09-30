@@ -15,6 +15,7 @@ const { sequelize } = require("./models");
 /* 라우터 */
 //const mainRouter = require("./routes/main/index");
 // const memberRouter = require("./routes/member/memberindex");
+// const adminRouter = require("./routes/admin/adminIndex");
 
 const app = express();
 
@@ -57,6 +58,7 @@ app.use("/member", require("./routes/member/memberindex"));
 
 // 라우터 등록
 app.use("/", require("./routes/main/index"));
+app.use("/admin", require("./routes/admin/adminIndex"));
 
 // 없는 페이지 처리 라우터
 app.use((req, res, next) => {

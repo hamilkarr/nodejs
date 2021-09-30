@@ -4,9 +4,13 @@ const commonLib = {
   //window.alert 메세지
   // @param msg 출력메세지
   // @param res - response 인스턴스
+  // @param step - history.go(step) -> 음수 이면 이전페이지(back), 양수 다음 페이지(forward)
 
-  alert(msg, res) {
-    const script = `<script>alert("${msg}");</script>`;
+  alert(msg, res, step) {
+    let script = `<script>alert("${msg}");</script>`;
+    if (step) {
+      script += `<script>history.back(${step});</script>`;
+    }
     res.send(script);
   },
 
