@@ -1,0 +1,13 @@
+CREATE TABLE `member` (
+   `memNo` int NOT NULL AUTO_INCREMENT COMMENT '회원번호',
+   `memId` varchar(20) NOT NULL COMMENT '회원 아이디',
+   `memNm` varchar(30) NOT NULL COMMENT '회원 이름',
+   `memPw` varchar(65) NOT NULL COMMENT '비밀번호',
+   `email` varchar(80) DEFAULT NULL,
+   `cellPhone` varchar(11) DEFAULT NULL,
+   `isAdmin` tinyint(1) DEFAULT '0' COMMENT '관리자여부 \n0= 일반회원,\n1= 관리자',
+   `regDt` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '회원 가입 일시',
+   `modDt` datetime DEFAULT NULL COMMENT '회원 정보 수정 일시',
+   PRIMARY KEY (`memNo`),
+   UNIQUE KEY `memId_UNIQUE` (`memId`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
