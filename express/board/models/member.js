@@ -18,11 +18,11 @@ const member = {
   */
   async join(data) {
     try {
-      const sql = `INSERT INTO member (memId, memNm, memPw, email, cellPhone)
-                          VALUES (:memId, :memNm, :memPw, :email, :cellPhone)`;
+      const sql = `INSERT INTO member (memID, memNm, memPw, email, cellPhone)
+                          VALUES (:memID, :memNm, :memPw, :email, :cellPhone)`;
       const memPw = await bcrypt.hash(data.memPw, 10);
       const replacements = {
-        memId: data.memId,
+        memId: data.memID,
         memNm: data.memNm,
         memPw, //:memPw,
         email: data.email,
@@ -32,7 +32,7 @@ const member = {
         replacements, //: replacements,
         type: QueryTypes.INSERT,
       });
-      console.log(result);
+      // console.log(result);
       return result[0]; // memNo - 회원번호 반환
     } catch (err) {
       logger(err.message, "error");
@@ -81,7 +81,7 @@ const member = {
       if (rows.length == 0) {
         return false;
       }
-      return rows;
+      return rows[0];
       //  console.log(rows);
     } catch (err) {
       logger(err.message, "error");

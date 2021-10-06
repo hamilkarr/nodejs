@@ -18,7 +18,7 @@ const member = {
      * 5. 휴대전화번호 DB 처리 통일성을 위해서 숫자로만 변경
      * 6. 중복 가입 여부(이미 가입된 회원인 경우 -> 회원 가입 불가) */
     try {
-      // 필수 데이터 입력(아이디,회원명,비밀번호,비밀번호 확인) 체크
+      // 0.필수 데이터 입력(아이디,회원명,비밀번호,비밀번호 확인) 체크
       const required = {
         memID: "아이디를 입력해 주세요.",
         memNm: "회원명을 입력해 주세요.",
@@ -68,21 +68,26 @@ const member = {
         req.body.cellPhone = cellPhone; // 5. 휴대전화번호를 숫자로만 변경
       }
 
-      // 6
-      const sql = "SELECT COUNT(*) as cnt from member where memID = ?";
-      const result = await sequelize.query(sql, {
-        replacement: [memID],
+      // 6. 중복 가입 여부 (이미 가입된 회원인 경우 -> 회원 가입 불가)
+      const sql = "SELECT COUNT(*) as cnt FROM member WHERE memId = ?";
+      const rows = await sequelize.query(sql, {
+        replacements: [memID],
         type: QueryTypes.SELECT,
       });
-      if (row[0].cnt > 0) {
+      if (rows[0].cnt > 0) {
         // 중복 회원
-        throw new Error("이미 가입된 아이디 입니다." + memID);
+        throw new Error("이미 가입된 아이디 입니다. - " + memID);
       }
     } catch (err) {
+      // alert 형태로 에러 메세지 출력
       return alert(err.message, res);
     }
+
     next();
   },
+
+  // 로그인 유효성 검사
+
   loginValidator(req, res, next) {
     try {
       if (!req.body.memID) {

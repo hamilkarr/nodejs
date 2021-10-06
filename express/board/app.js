@@ -19,6 +19,8 @@ const { sequelize } = require("./models");
 
 const app = express();
 
+// dotenv.config();
+
 sequelize
   .sync({ force: false })
   .then(() => {
@@ -35,7 +37,6 @@ nunjucks.configure(path.join(__dirname, "views"), {
   express: app,
   watch: true,
 });
-// dotenv.config();
 
 app.use(morgan("dev"));
 // body-parser
@@ -54,11 +55,11 @@ app.use(
   })
 );
 app.use("/", require("./boot")); // 사이트 초기화
-app.use("/member", require("./routes/member/memberindex"));
 
 // 라우터 등록
 app.use("/", require("./routes/main/index"));
-app.use("/admin", require("./routes/admin/adminIndex"));
+app.use("/member", require("./routes/member/memberindex")); // 회원 관련
+app.use("/admin", require("./routes/admin/adminIndex")); // 관리자 페이지
 
 // 없는 페이지 처리 라우터
 app.use((req, res, next) => {

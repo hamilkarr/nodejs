@@ -8,8 +8,12 @@ const { alert, go } = require("../../lib/common");
 const express = require("express");
 const router = express.Router();
 
-/* 
-
+/**
+/member/join - GET -> 가입 양식 
+					  - POST -> 가입 처리 
+	
+/member/login - GET -> 로그인 양식 
+					- POST -> 로그인 처리 
 */
 
 router
@@ -27,9 +31,10 @@ router
     if (memNo) {
       //회원가입 성공
       //로그인 처리 -> 메인페이지로 이동
+      return go("/member/login", res, "parent");
     }
     //로그인 처리 실패 -> 메세지를 출력
-    return alert("회원가입에 실패했습니다.");
+    return alert("회원가입에 실패했습니다.", res);
   });
 
 router

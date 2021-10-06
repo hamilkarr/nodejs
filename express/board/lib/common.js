@@ -22,6 +22,7 @@ const commonLib = {
   go(url, res, target) {
     target = target || "self";
     const script = `<script>${target}location.href='${url}';</script>`;
+    res.send(script);
   },
 };
 

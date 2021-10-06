@@ -11,10 +11,9 @@ module.exports = async (req, res, next) => {
     메뉴명, 메뉴 링크 */
   res.locals.mainMenu = [
     { name: "메뉴1", url: "#" },
-    { name: "메뉴2", url: "##" },
-    { name: "메뉴3", url: "##" },
-    { name: "메뉴4", url: "###" },
-    { name: "메뉴5", url: "####" },
+    { name: "메뉴2", url: "#" },
+    { name: "메뉴3", url: "#" },
+    { name: "메뉴4", url: "#" },
   ];
 
   /* 사이트 title */
