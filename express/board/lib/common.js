@@ -30,12 +30,12 @@ const commonLib = {
    * @param res -response 인스턴스
    * @param target - 기본값 self - 현재 창, parent - 부모창
    */
-  reload(res,target) {
-    target = target || 'self';
+  reload(res, target) {
+    target = target || "self";
 
-    const script
-
-  }
+    const script = `<script>${target}.location.reload();</script>`;
+    res.send(script);
+  },
 };
 
 module.exports = commonLib;
