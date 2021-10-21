@@ -1,0 +1,38 @@
+{"level":"info","message":"[19:46:25]데이터 베이스 연결 성공","service":"general"}
+{"level":"error","message":"[19:47:19]Error: /favicon.ico은 없는 페이지 입니다.\n    at C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\app.js:68:17\n    at Layer.handle [as handle_request] (C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\node_modules\\express\\lib\\router\\index.js:317:13)\n    at C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\node_modules\\express\\lib\\router\\index.js:284:7\n    at Function.process_params (C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\node_modules\\express\\lib\\router\\index.js:275:10)\n    at C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\node_modules\\express\\lib\\router\\index.js:635:15\n    at next (C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\node_modules\\express\\lib\\router\\index.js:260:14)\n    at Function.handle (C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\node_modules\\express\\lib\\router\\index.js:174:3)\n    at router (C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\node_modules\\express\\lib\\router\\index.js:47:12)","service":"general"}
+{"level":"error","message":"[19:47:19][404]/favicon.ico은 없는 페이지 입니다.","service":"general"}
+{"level":"error","message":"[19:48:43]TypeError: data.join is not a function\n    at Object.getBoard (C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\models\\board.js:74:33)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)\n    at async C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\routes\\admin\\index.js:52:18","service":"general"}
+{"level":"error","message":"[19:48:43]data.join is not a function","service":"general"}
+{"level":"error","message":"[19:48:46]TypeError: data.join is not a function\n    at Object.getBoard (C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\models\\board.js:74:33)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)\n    at async C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\routes\\admin\\index.js:52:18","service":"general"}
+{"level":"error","message":"[19:48:46]data.join is not a function","service":"general"}
+{"level":"error","message":"[19:48:52][404]/admin/member은 없는 페이지 입니다.","service":"general"}
+{"level":"error","message":"[19:48:52]Error: /admin/member은 없는 페이지 입니다.\n    at C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\app.js:68:17\n    at Layer.handle [as handle_request] (C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\node_modules\\express\\lib\\router\\index.js:317:13)\n    at C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\node_modules\\express\\lib\\router\\index.js:284:7\n    at Function.process_params (C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\node_modules\\express\\lib\\router\\index.js:275:10)\n    at C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\node_modules\\express\\lib\\router\\index.js:635:15\n    at next (C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\node_modules\\express\\lib\\router\\index.js:260:14)\n    at Function.handle (C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\node_modules\\express\\lib\\router\\index.js:174:3)\n    at router (C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\node_modules\\express\\lib\\router\\index.js:47:12)","service":"general"}
+{"level":"error","message":"[19:49:18]data.join is not a function","service":"general"}
+{"level":"error","message":"[19:49:18]TypeError: data.join is not a function\n    at Object.getBoard (C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\models\\board.js:74:33)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)\n    at async C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\routes\\admin\\index.js:52:18","service":"general"}
+{"level":"error","message":"[19:51:45]data.join is not a function","service":"general"}
+{"level":"error","message":"[19:51:45]TypeError: data.join is not a function\n    at Object.getBoard (C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\models\\board.js:74:33)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)\n    at async C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\routes\\admin\\index.js:52:18","service":"general"}
+{"level":"info","message":"[19:57:31]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[20:01:13]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[20:05:33]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[20:05:38]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[20:06:04]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[20:06:26]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[20:06:57]데이터 베이스 연결 성공","service":"general"}
+{"level":"error","message":"[20:31:30]data.join is not a function","service":"general"}
+{"level":"error","message":"[20:31:30]TypeError: data.join is not a function\n    at Object.getBoard (C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\models\\board.js:75:33)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)\n    at async C:\\hamilkarr_coding\\nodejs\\express\\board_lecture\\routes\\admin\\index.js:52:18","service":"general"}
+{"level":"info","message":"[20:35:03]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[20:35:34]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[20:37:25]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[20:39:52]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[20:43:26]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[20:45:46]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[20:52:23]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[20:53:33]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[20:55:04]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[20:57:48]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[20:58:49]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[20:59:17]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[20:59:28]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[21:00:45]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[21:02:09]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[21:02:49]데이터 베이스 연결 성공","service":"general"}

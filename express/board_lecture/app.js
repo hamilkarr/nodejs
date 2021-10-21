@@ -15,6 +15,7 @@ const adminRouter = require("./routes/admin"); // 관리자 페이지
 const mainRouter = require("./routes/main");
 const memberRouter = require("./routes/member"); // 회원 관련
 const boardRouter = require("./routes/board"); // 게시판 라우터
+const fileRouter = require();
 
 const app = express();
 
@@ -60,6 +61,7 @@ app.use(bootStrap); // 사이트 초기화
 app.use(mainRouter);
 app.use("/member", memberRouter); // 회원 관련
 app.use("/board", boardRouter); // 게시판 관련
+app.use("/file", fileRouter); // 파일 업로드 관련
 
 app.use("/admin", adminRouter); // 관리자 페이지
 

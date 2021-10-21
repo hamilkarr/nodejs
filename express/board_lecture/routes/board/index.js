@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const board = require("../../models/board");
 
 // 게시판 라우터
 // /board
@@ -9,12 +10,20 @@ const router = require("express").Router();
 //  삭제 - /delete/:idx (게시글 작성 번호)
 
 // 게시글 작성 라우터
+router.use("/write:id", async (req, res) => {
+  req.boardConf = await board.getBoard(req.params.id);
+
+  next();
+});
+
 router
   .route("/write/:id")
   .get((req, res) => {
     // 게시글 작성 양식
+    // console.log(req.boardConf);
     const data = {
-      addScript: ["ckeditor/ckeditor"],
+      addScript: ["ckeditor/ckeditor", "board/form"],
+      boardConf: req.boardConf,
     };
     return res.render("board/form");
   })
