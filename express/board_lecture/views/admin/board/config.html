@@ -26,9 +26,10 @@
 		<tr>
 			<th>답글</th>
 			<td>
-				<input type="radio" name="useReply" value="0" id="useReply_0"{{ ' checked' if useReply != 1 }}>
+	
+				<input type="radio" name="useReply" value="0" id="useReply_0"{{ ' checked' if useReply != 1}}>
 				<label for="useReply_0">미사용</label>
-				<input type="radio" name="useReply" value="1" id="useReply_1">
+				<input type="radio" name="useReply" value="1" id="useReply_1"{{ ' checked' if useReply == 1 }}>
 				<label for="useReply_1">사용</label>
 			</td>
 		</tr>
@@ -43,15 +44,18 @@
 					{{ ' checked' if useComment == 1 }}
 				>
 				<label for="useComment_1">사용</label> / 
+				
 				<b>작성 권한 : </b>
 				<input type="radio" name="commentLevel" value="all" id="commentLevel_all"
 					{{ ' checked' if commentLevel == 'all' }}
 				>
 				<label for="commentLevel_all">전체(비회원+회원+관리자)</label>
+				
 				<input type="radio" name="commentLevel" value="member" id="commentLevel_member"
 					{{ ' checked' if commentLevel == 'member' }}
 				>
 				<label for="commentLevel_member">회원(회원+관리자)</label>
+				
 				<input type="radio" name="commentLevel" value="admin" id="commentLevel_admin"
 					{{ ' checked' if commentLevel == 'admin' }}
 				>
@@ -67,10 +71,12 @@
 							{{ ' checked' if listLevel == 'all' }}
 						>
 						<label for="listLevel_all">전체(비회원+회원+관리자)</label>
+						
 						<input type="radio" name="listLevel" value="member" id="listLevel_member"
 							{{ ' checked' if listLevel == 'member' }}
 						>
 						<label for="listLevel_member">회원(회원+관리자)</label>
+						
 						<input type="radio" name="listLevel" value="admin" id="listLevel_admin"
 							{{ ' checked' if listLevel == 'admin' }}
 						>
@@ -82,10 +88,12 @@
 							{{ ' checked' if viewLevel == 'all' }}
 						>
 						<label for="viewLevel_all">전체(비회원+회원+관리자)</label>
+						
 						<input type="radio" name="viewLevel" value="member" id="viewLevel_member"
 							{{ ' checked' if viewLevel == 'member' }}
 						>
 						<label for="viewLevel_member">회원(회원+관리자)</label>
+						
 						<input type="radio" name="viewLevel" value="admin" id="viewLevel_admin"
 							{{ ' checked' if viewLevel == 'admin' }}
 						>
@@ -94,15 +102,17 @@
 				<div>
 					게시글 쓰기 - 
 						<input type="radio" name="writeLevel" value="all" id="writeLevel_all"
-							{{ ' checked' if writeLevel == 'all'}}
+							{{ ' checked' if writeLevel == 'all' }}
 						>
 						<label for="writeLevel_all">전체(비회원+회원+관리자)</label>
+						
 						<input type="radio" name="writeLevel" value="member" id="writeLevel_member"
-							{{ ' checked' if writeLevel == 'member'}}
+							{{ ' checked' if writeLevel == 'all' }}
 						>
 						<label for="writeLevel_member">회원(회원+관리자)</label>
+						
 						<input type="radio" name="writeLevel" value="admin" id="writeLevel_admin"
-							{{ ' checked' if writeLevel == 'admin'}}
+							{{ ' checked' if writeLevel == 'admin' }}
 						>
 						<label for="writeLevel_admin">관리자</label>
 				</div>
@@ -123,6 +133,7 @@
 					{{ ' checked' if uploadImage == 1 }}
 				>
 				<label for="uploadImage">이미지 추가</label> 
+				
 				<input type="checkbox" name="uploadFile" value="1" id="uploadFile"
 					{{ ' checked' if uploadFile == 1 }}
 				>
