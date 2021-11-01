@@ -1,5 +1,5 @@
-const router = require('express').Router();
-const board = require('../../models/board');
+const router = require("express").Router();
+const board = require("../../models/board");
 const { uid } = require("../../lib/common");
 const uploadFile = require("../../models/uploadFile");
 
@@ -16,31 +16,31 @@ const uploadFile = require("../../models/uploadFile");
 */
 
 /**
-* 게시글 작성 
-*
-*/
+ * 게시글 작성
+ *
+ */
 /** 글쓰기 공통 라우터 */
 router.use("/write/:id", async (req, res, next) => {
-	req.boardConf = await board.getBoard(req.params.id);	
-	next();
+  req.boardConf = await board.getBoard(req.params.id);
+  next();
 });
 
-router.route("/write/:id")
-		.get(async (req, res) => {  // 게시글 작성 양식 
-			const fileList = await uploadFile.getList(1635420263620);
-		
-			const data = {
-				addScript : ["ckeditor/ckeditor", "board/form"],
-				boardConf : req.boardConf,
-				gid : uid(),
-				editorFiles : fileList.board_editor ?? [],
-				attachFiles : fileList.board ?? [],
-			};
-			return res.render("board/form", data);
-		})
-		.post((req, res) => { // 게시글 등록 처리 
-			
-		});
-
+router
+  .route("/write/:id")
+  .get(async (req, res) => {
+    // 게시글 작성 양식
+    const data = {
+      addScript: ["ckeditor/ckeditor", "board/form"],
+      boardConf: req.boardConf,
+      gid: uid(),
+      //editorFiles: fileList.board_editor ?? [],
+      //attachFiles: fileList.board ?? [],
+    };
+    //console.log(data);
+    return res.render("board/form", data);
+  })
+  .post((req, res) => {
+    // 게시글 등록 처리
+  });
 
 module.exports = router;

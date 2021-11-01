@@ -1,5 +1,27 @@
 <!-- Default 글 작성/수정 양식 -->
 <div class='default_skin_form'>
+	{% if boardConf.category.length > 0 %}
+		<dl>
+			<dt>분류</dt>
+			<dd>
+				<select name='category'>
+					<option value=''> -선택하세요- </option>
+				{% for item in boardConf.category %}
+					<option value="{{item}}">{{item}}</option>
+				{% endfor %}
+				</select>
+			</dd>
+		</dl>
+	{% endif %}
+	<dt>
+		<dt>작성자명</dt>
+		<dd>
+			<input type="text" name="poster" value="{{member.memNm if isLogin}}">
+			{% if not isLogin %}
+			/ 글 수정 비밀번호:	<input type="password" name="password">
+			{% endif %}
+		</dd>
+	</dt>
 	<dl>
 		<dt>제목</dt>
 		<dd>
@@ -16,6 +38,7 @@
 			{% for item in editorFiles %}
 				<li data-idx='{{ item.idx }}' data-url='{{ item.uploadedURL }}'>
 					<a href="/file/download/{{ item.idx }}">{{ item.originalName }}</a>
+					<i class="xi-file-upload insert_editor"></i>
 					<i class='xi-close-min delete'></i>
 				</li>
 			{% endfor %}
