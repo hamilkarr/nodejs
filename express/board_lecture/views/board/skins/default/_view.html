@@ -15,13 +15,13 @@
 	<div class='content'>
 		{{ content | safe }}
 	</div>
-	{% if attachFiles.length > 0 %}		
-	<div class="stitle">첨부파일</div>
-	<ul class="file_list">
+	{% if attachFiles.length > 0 %}
+	<div class='stitle'>첨부파일</div>
+	<ul class='file_list'>
 		{% for item in attachFiles %}
-			<li>
-				<a href="/file/download/{{item.idx}}">{{loop.index}}.{{item.originalName}}</a>
-			</li>
+		<li>
+			<a href='/file/download/{{ item.idx }}'>{{ loop.index }}. {{ item.originalName }}</a>
+		</li>
 		{% endfor %}
 	</ul>
 	{% endif %}

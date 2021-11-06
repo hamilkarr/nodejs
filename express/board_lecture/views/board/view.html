@@ -1,14 +1,22 @@
 {% extends "../outline/layout/main.html" %}
 {% block content %}
-<div class="board board_view">
+<div class='board board_view'>
 {% include boardConf.viewSkinPath %}
 
-<div class="btns">
-  <a href="../list/{{ boardConf.boardId }}">글 목록</a>
-  <a href="../write/{{ boardConf.boardId }}">글 작성</a>
-  <a href="../update/{{ idx }}">글 수정</a>
-  <a href="../delete/{{ idx }}" onclick="return confirm('정말 지울꺼임?');">글 삭제</a>
+<div class='btns'>
+	<a href='../list/{{ boardConf.boardId }}'>글 목록</a>
+	<a href='../write/{{ boardConf.boardId }}'>글 작성</a>
+	<a href='../update/{{ idx }}'>글 수정</a>
+	<a href='../delete/{{ idx }}' onclick="return confirm('정말 삭제하시겠습니까?');">글 삭제</a>
 </div>
-<!-- btn end-->
+<!--// btns -->
 </div>
+<!--// board_view -->
+
+{% if boardConf.useComment == "1" %}
+<!-- 댓글 영역 S -->
+{% include boardConf.commentSkinPath %}
+<!-- 댓글 영역 E -->
+{% endif %}
+
 {% endblock %}
