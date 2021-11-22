@@ -171,6 +171,10 @@ router
   })
   /** 댓글 수정 처리 */
   .patch(async (req, res) => {
+<<<<<<< Updated upstream
+=======
+    console.log(req.body);
+>>>>>>> Stashed changes
     const idx = req.params.idx;
     const mode = req.body.mode;
     if (mode == "get_form") {
@@ -218,6 +222,7 @@ router
 
     return res.render("board/password", { mode, idx });
   })
+<<<<<<< Updated upstream
   .post((req, res) => {
     // 비밀번호 체크 처리
     const mode = req.body.mode;
@@ -238,6 +243,42 @@ router
 
     // 검증 성공
     const script = `<script>parent.callbackGuestPassword('${mode}','${idx}')</script>`;
+=======
+  .post(async (req, res) => {
+    // 비밀번호 체크 처리
+    const mode = req.body.mode;
+    const idx = req.body.idx;
+    if (!mode || !idx) {
+      return alert("잘못된 접근입니다.", res);
+    }
+    let type = "board";
+    if (mode.indexOf("comment") != -1) {
+      // 댓글 수정, 삭제
+      type = "comment";
+    }
+
+    const result = await board.checkPassword(idx, type, req);
+    if (result) {
+      let key = "";
+      if (type == "comment") {
+        //댓글
+        key = "guestcomment" + idx;
+      } else {
+        // 게시판
+        key = "guestboard" + idx;
+      }
+
+      if (key) {
+        // 비회원 비밀번호 인증 성공시 세션에 true
+        req.session[key] = true;
+      }
+    } else {
+      // 검증 실패
+      return alert("비밀번호 확인에 실패하였습니다.", res);
+    }
+    // 검증 성공
+    const script = `<script>parent.callbackGuestPassword('${mode}', '${idx}')</script>`;
+>>>>>>> Stashed changes
     return res.send(script);
   });
 

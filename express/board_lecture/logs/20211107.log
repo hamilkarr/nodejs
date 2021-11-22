@@ -208,6 +208,7 @@
 {"level":"info","message":"[12:06:20]데이터 베이스 연결 성공","service":"general"}
 {"level":"info","message":"[12:06:28]데이터 베이스 연결 성공","service":"general"}
 {"level":"info","message":"[12:06:35]데이터 베이스 연결 성공","service":"general"}
+<<<<<<< Updated upstream
 {"level":"info","message":"[12:11:16]데이터 베이스 연결 성공","service":"general"}
 {"level":"info","message":"[12:11:20]데이터 베이스 연결 성공","service":"general"}
 {"level":"info","message":"[12:15:20]데이터 베이스 연결 성공","service":"general"}
@@ -242,3 +243,110 @@
 {"level":"info","message":"[13:04:12]데이터 베이스 연결 성공","service":"general"}
 {"level":"info","message":"[13:05:07]데이터 베이스 연결 성공","service":"general"}
 {"level":"info","message":"[13:05:24]데이터 베이스 연결 성공","service":"general"}
+=======
+{"level":"info","message":"[12:13:00]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:13:42]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:13:49]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:13:57]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:14:05]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:14:23]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:14:41]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:16:25]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:16:27]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:16:45]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:17:41]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:17:47]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:18:31]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:18:41]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:18:55]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:20:52]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:21:01]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:26:29]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:26:59]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:27:04]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:27:12]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:27:54]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:28:21]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:28:33]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:29:57]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:30:51]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:30:59]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:31:11]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:31:20]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:31:44]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:31:53]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:32:07]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:32:19]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:33:03]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:33:26]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:33:29]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:33:41]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:34:34]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:34:40]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:34:43]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:36:08]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:36:17]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:36:56]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:38:12]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:38:37]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:38:43]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:38:50]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:38:53]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:40:17]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:41:40]데이터 베이스 연결 성공","service":"general"}
+{"level":"error","message":"[12:42:05][404]/board/check_password?mode=update_comment&idx=7은 없는 페이지 입니다.","service":"general"}
+{"level":"error","message":"[12:42:05]Error: /board/check_password?mode=update_comment&idx=7은 없는 페이지 입니다.\n    at D:\\nodejs\\board\\app.js:69:16\n    at Layer.handle [as handle_request] (D:\\nodejs\\board\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\nodejs\\board\\node_modules\\express\\lib\\router\\index.js:317:13)\n    at D:\\nodejs\\board\\node_modules\\express\\lib\\router\\index.js:284:7\n    at Function.process_params (D:\\nodejs\\board\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (D:\\nodejs\\board\\node_modules\\express\\lib\\router\\index.js:275:10)\n    at D:\\nodejs\\board\\node_modules\\express\\lib\\router\\index.js:635:15\n    at next (D:\\nodejs\\board\\node_modules\\express\\lib\\router\\index.js:260:14)\n    at D:\\nodejs\\board\\routes\\board\\index.js:24:2\n    at Layer.handle [as handle_request] (D:\\nodejs\\board\\node_modules\\express\\lib\\router\\layer.js:95:5)","service":"general"}
+{"level":"info","message":"[12:42:52]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:43:29]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:44:28]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:44:35]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:44:50]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:44:59]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:45:18]데이터 베이스 연결 성공","service":"general"}
+{"level":"error","message":"[12:51:46][404]/board/password은 없는 페이지 입니다.","service":"general"}
+{"level":"error","message":"[12:51:46]Error: /board/password은 없는 페이지 입니다.\n    at D:\\nodejs\\board\\app.js:69:16\n    at Layer.handle [as handle_request] (D:\\nodejs\\board\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\nodejs\\board\\node_modules\\express\\lib\\router\\index.js:317:13)\n    at D:\\nodejs\\board\\node_modules\\express\\lib\\router\\index.js:284:7\n    at Function.process_params (D:\\nodejs\\board\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (D:\\nodejs\\board\\node_modules\\express\\lib\\router\\index.js:275:10)\n    at D:\\nodejs\\board\\node_modules\\express\\lib\\router\\index.js:635:15\n    at next (D:\\nodejs\\board\\node_modules\\express\\lib\\router\\index.js:260:14)\n    at D:\\nodejs\\board\\routes\\board\\index.js:24:2\n    at Layer.handle [as handle_request] (D:\\nodejs\\board\\node_modules\\express\\lib\\router\\layer.js:95:5)","service":"general"}
+{"level":"error","message":"[12:52:05][404]/board/password은 없는 페이지 입니다.","service":"general"}
+{"level":"error","message":"[12:52:05]Error: /board/password은 없는 페이지 입니다.\n    at D:\\nodejs\\board\\app.js:69:16\n    at Layer.handle [as handle_request] (D:\\nodejs\\board\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (D:\\nodejs\\board\\node_modules\\express\\lib\\router\\index.js:317:13)\n    at D:\\nodejs\\board\\node_modules\\express\\lib\\router\\index.js:284:7\n    at Function.process_params (D:\\nodejs\\board\\node_modules\\express\\lib\\router\\index.js:335:12)\n    at next (D:\\nodejs\\board\\node_modules\\express\\lib\\router\\index.js:275:10)\n    at D:\\nodejs\\board\\node_modules\\express\\lib\\router\\index.js:635:15\n    at next (D:\\nodejs\\board\\node_modules\\express\\lib\\router\\index.js:260:14)\n    at D:\\nodejs\\board\\routes\\board\\index.js:24:2\n    at Layer.handle [as handle_request] (D:\\nodejs\\board\\node_modules\\express\\lib\\router\\layer.js:95:5)","service":"general"}
+{"level":"info","message":"[12:53:09]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:53:30]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:53:34]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:53:52]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:54:05]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:55:09]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:55:24]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:57:01]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:57:32]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:57:45]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:57:56]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:58:06]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:58:22]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:58:26]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:58:38]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[12:59:11]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[13:00:37]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[13:01:18]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[13:01:44]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[13:01:48]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[13:01:55]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[13:03:26]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[13:03:37]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[13:08:44]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[13:09:52]데이터 베이스 연결 성공","service":"general"}
+{"level":"error","message":"[13:10:03]data and hash arguments required","service":"general"}
+{"level":"error","message":"[13:10:03]Error: data and hash arguments required\n    at Object.compare (D:\\nodejs\\board\\node_modules\\bcrypt\\bcrypt.js:208:17)\n    at D:\\nodejs\\board\\node_modules\\bcrypt\\promises.js:29:12\n    at new Promise (<anonymous>)\n    at Object.module.exports.promise (D:\\nodejs\\board\\node_modules\\bcrypt\\promises.js:20:12)\n    at Object.compare (D:\\nodejs\\board\\node_modules\\bcrypt\\bcrypt.js:204:25)\n    at Object.checkPassword (D:\\nodejs\\board\\models\\board.js:566:32)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async D:\\nodejs\\board\\routes\\board\\index.js:219:18","service":"general"}
+{"level":"error","message":"[13:10:10]data and hash arguments required","service":"general"}
+{"level":"error","message":"[13:10:10]Error: data and hash arguments required\n    at Object.compare (D:\\nodejs\\board\\node_modules\\bcrypt\\bcrypt.js:208:17)\n    at D:\\nodejs\\board\\node_modules\\bcrypt\\promises.js:29:12\n    at new Promise (<anonymous>)\n    at Object.module.exports.promise (D:\\nodejs\\board\\node_modules\\bcrypt\\promises.js:20:12)\n    at Object.compare (D:\\nodejs\\board\\node_modules\\bcrypt\\bcrypt.js:204:25)\n    at Object.checkPassword (D:\\nodejs\\board\\models\\board.js:566:32)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async D:\\nodejs\\board\\routes\\board\\index.js:219:18","service":"general"}
+{"level":"error","message":"[13:10:25]data and hash arguments required","service":"general"}
+{"level":"error","message":"[13:10:25]Error: data and hash arguments required\n    at Object.compare (D:\\nodejs\\board\\node_modules\\bcrypt\\bcrypt.js:208:17)\n    at D:\\nodejs\\board\\node_modules\\bcrypt\\promises.js:29:12\n    at new Promise (<anonymous>)\n    at Object.module.exports.promise (D:\\nodejs\\board\\node_modules\\bcrypt\\promises.js:20:12)\n    at Object.compare (D:\\nodejs\\board\\node_modules\\bcrypt\\bcrypt.js:204:25)\n    at Object.checkPassword (D:\\nodejs\\board\\models\\board.js:566:32)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)\n    at async D:\\nodejs\\board\\routes\\board\\index.js:219:18","service":"general"}
+{"level":"info","message":"[13:11:04]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[13:12:03]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[13:12:30]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[13:12:45]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[13:12:48]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[13:12:49]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[13:13:43]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[13:14:04]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[13:15:38]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[13:18:38]데이터 베이스 연결 성공","service":"general"}
+{"level":"info","message":"[13:22:16]데이터 베이스 연결 성공","service":"general"}
+>>>>>>> Stashed changes

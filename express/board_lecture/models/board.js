@@ -551,21 +551,37 @@ const board = {
       return false;
     }
   },
+<<<<<<< Updated upstream
   /** 비회원 비밀번호 검증 */
+=======
+  /**
+   * 비회원 비밀번호 검증
+   *
+   */
+>>>>>>> Stashed changes
   async checkPassword(idx, type, req) {
     try {
       if (!idx) {
         throw new Error("게시글 또는 댓글 등록번호 누락.");
       }
       if (!req.body.password) {
+<<<<<<< Updated upstream
         throw new Error("비밀번호 누락");
       }
       type = type || "board";
+=======
+        throw new Error("비밀번호 누락..");
+      }
+
+      type = type || "board";
+
+>>>>>>> Stashed changes
       let data;
       let key;
       if (type == "comment") {
         // 댓글
         data = await this.getComment(idx);
+<<<<<<< Updated upstream
         key = "guest_comment_" + idx;
       } else {
         // 게시판
@@ -580,6 +596,23 @@ const board = {
 
           return true;
         }
+=======
+      } else {
+        // 게시판
+        data = await this.get(idx);
+      }
+      let hash = data ? data.password : "";
+      if (hash) {
+        /*
+				const match = await bcrypt.compare(req.body.password, hash)
+				if (match) { // 비회원 비밀번호가 일치하는 경우 -> 세션 처리 
+					// req.session[key] = true;
+					
+					return true;
+				}
+				*/
+        return true;
+>>>>>>> Stashed changes
       }
 
       return false;
@@ -589,6 +622,7 @@ const board = {
       return false;
     }
   },
+<<<<<<< Updated upstream
 
   updateViewCount(idx, req) {
     if (!idx || !req) return;
@@ -618,6 +652,8 @@ const board = {
       logger(err.stack, "error");
     }
   },
+=======
+>>>>>>> Stashed changes
 };
 
 module.exports = board;

@@ -113,14 +113,26 @@ const board = {
        * 세션에 검증 값을 넣어 주고 있으면 검증 성공
        */
       if (!data.memNo) {
+<<<<<<< Updated upstream
         const key = "guest_comment_" + idx; // session 값이 true이면 검증 성공
         if (req.session[key]) {
           // 검증 성공
           isSuccess = true;
+=======
+        const key = "guestcomment" + idx; // session 값이 true이면 검증 성공
+        if (req.session[key]) {
+          // 검증 성공
+          isSuccess = true;
+          next();
+>>>>>>> Stashed changes
         }
       } else {
         if (req.isLogin && data.memNo == req.member.memNo) {
           isSuccess = true;
+<<<<<<< Updated upstream
+=======
+          next();
+>>>>>>> Stashed changes
         } else {
           message =
             "본인이 작성한 게시글만 " +
